@@ -226,3 +226,4 @@ SELECT * FROM ( SELECT 'Package Extension Version','com_pixext.packageextensionv
 WHERE NOT EXISTS (
 	SELECT type_alias FROM `#__content_types` WHERE (`type_alias` = 'com_pixext.packageextensionversion')
 ) LIMIT 1;
+
