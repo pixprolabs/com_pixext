@@ -16,17 +16,17 @@
     
     <install> <!-- Runs on install -->
         <sql>
-            <file driver="mysql" charset="utf8">admin/sql/install.mysql.utf8.sql</file>
+            <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
         </sql>
     </install>
     <update> <!-- Runs on update -->
         <sql>
-            <file driver="mysql" charset="utf8">admin/sql/update.mysql.utf8.sql</file>
+            <file driver="mysql" charset="utf8">sql/update.mysql.utf8.sql</file>
         </sql>
     </update>
     <uninstall> <!-- Runs on uninstall -->
         <sql>
-            <file driver="mysql" charset="utf8">admin/sql/uninstall.mysql.utf8.sql</file>
+            <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
         </sql>
     </uninstall>
 
@@ -45,7 +45,7 @@
         <folder>js</folder>
         <folder>css</folder>
     </media>
-    <languages folder="site/languages">
+    <languages folder="site/language">
 			<language tag="en-GB">en-GB/en-GB.com_pixext.ini</language>
     </languages>
     <administration>
@@ -94,7 +94,7 @@
             <folder>views</folder>
             <folder>language</folder>
         </files>
-        <languages folder="language">
+        <languages folder="admin/language">
 			<language tag="en-GB">en-GB/en-GB.com_pixext.ini</language>
 			<language tag="en-GB">en-GB/en-GB.com_pixext.sys.ini</language>
         </languages>
