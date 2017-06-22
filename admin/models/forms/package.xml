@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+  <fieldset>
+    <field name="pixext_package_id" label="COM_PIXEXT_FORM_LBL_PACKAGE_PIXEXT_PACKAGE_ID" description="COM_PIXEXT_FORM_DESC_PACKAGE_PIXEXT_PACKAGE_ID" hint="COM_PIXEXT_FORM_LBL_PACKAGE_PIXEXT_PACKAGE_ID"/>
+    <field name="name" type="text" label="COM_PIXEXT_FORM_LBL_PACKAGE_NAME" description="COM_PIXEXT_FORM_DESC_PACKAGE_NAME" hint="COM_PIXEXT_FORM_LBL_PACKAGE_NAME"/>
+    <field name="author" type="text" label="COM_PIXEXT_FORM_LBL_PACKAGE_AUTHOR" description="COM_PIXEXT_FORM_DESC_PACKAGE_AUTHOR" hint="COM_PIXEXT_FORM_LBL_PACKAGE_AUTHOR"/>
+    <field name="packagename" type="text" label="COM_PIXEXT_FORM_LBL_PACKAGE_PACKAGENAME" description="COM_PIXEXT_FORM_DESC_PACKAGE_PACKAGENAME" hint="COM_PIXEXT_FORM_LBL_PACKAGE_PACKAGENAME"/>
+    <field name="url" label="COM_PIXEXT_FORM_LBL_PACKAGE_URL" description="COM_PIXEXT_FORM_DESC_PACKAGE_URL" hint="COM_PIXEXT_FORM_LBL_PACKAGE_URL"/>
+    <field name="packager" type="text" label="COM_PIXEXT_FORM_LBL_PACKAGE_PACKAGER" description="COM_PIXEXT_FORM_DESC_PACKAGE_PACKAGER" hint="COM_PIXEXT_FORM_LBL_PACKAGE_PACKAGER"/>
+    <field name="packagerurl" type="text" label="COM_PIXEXT_FORM_LBL_PACKAGE_PACKAGERURL" description="COM_PIXEXT_FORM_DESC_PACKAGE_PACKAGERURL" hint="COM_PIXEXT_FORM_LBL_PACKAGE_PACKAGERURL"/>
+    <field name="description" type="text" label="COM_PIXEXT_FORM_LBL_PACKAGE_DESCRIPTION" description="COM_PIXEXT_FORM_DESC_PACKAGE_DESCRIPTION" hint="COM_PIXEXT_FORM_LBL_PACKAGE_DESCRIPTION"/>
+    <field name="creation_date" type="calendar" class="inputbox" label="COM_PIXEXT_FORM_LBL_PACKAGE_CREATION_DATE" description="COM_PIXEXT_FORM_DESC_PACKAGE_CREATION_DATE" hint="COM_PIXEXT_FORM_LBL_PACKAGE_CREATION_DATE"/>
+    <field name="scriptfile" type="text" label="COM_PIXEXT_FORM_LBL_PACKAGE_SCRIPTFILE" description="COM_PIXEXT_FORM_DESC_PACKAGE_SCRIPTFILE" hint="COM_PIXEXT_FORM_LBL_PACKAGE_SCRIPTFILE"/>
+    <field name="script" type="textarea" label="COM_PIXEXT_FORM_LBL_PACKAGE_SCRIPT" description="COM_PIXEXT_FORM_DESC_PACKAGE_SCRIPT" hint="COM_PIXEXT_FORM_LBL_PACKAGE_SCRIPT"/>
+    <field name="state" type="list" label="JSTATUS" description="JFIELD_PUBLISHED_DESC" class="inputbox" size="1" default="0">
+      <option value="1">JPUBLISHED</option>
+      <option value="0">JUNPUBLISHED</option>
+      <option value="2">JARCHIVED</option>
+      <option value="-2">JTRASHED</option>
+    </field>
+    <field name="checked_out" type="hidden" filter="unset"/>
+    <field name="checked_out_time" default="0000-00-00 00:00:00" type="hidden" filter="unset"/>
+    <field name="created_by" type="createdby" default="0" label="COM_PIXEXT_FORM_LBL_PACKAGE_CREATED_BY" description="COM_PIXEXT_FORM_DESC_PACKAGE_CREATED_BY" hint="COM_PIXEXT_FORM_LBL_PACKAGE_CREATED_BY"/>
+    <field name="version_note" type="text" label="JGLOBAL_FIELD_VERSION_NOTE_LABEL" description="JGLOBAL_FIELD_VERSION_NOTE_DESC" class="inputbox" size="45" labelclass="control-label"/>
+  </fieldset>
+</form>

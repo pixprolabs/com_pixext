@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+  <fieldset>
+    <field name="pixext_version_id" label="COM_PIXEXT_FORM_LBL_VERSION_PIXEXT_VERSION_ID" description="COM_PIXEXT_FORM_DESC_VERSION_PIXEXT_VERSION_ID" hint="COM_PIXEXT_FORM_LBL_VERSION_PIXEXT_VERSION_ID"/>
+    <field name="pixext_extension_id" type="foreignkey" label="COM_PIXEXT_FORM_LBL_VERSION_PIXEXT_EXTENSION_ID" description="COM_PIXEXT_FORM_DESC_VERSION_PIXEXT_EXTENSION_ID" class="inputbox" input_type="list" table="#__pixext_extensions" key_field="pixext_extension_id" value_field="name" default="0"/>
+    <field name="pixext_tag_id" type="foreignkey" label="COM_PIXEXT_FORM_LBL_VERSION_PIXEXT_TAG_ID" description="COM_PIXEXT_FORM_DESC_VERSION_PIXEXT_TAG_ID" class="inputbox" input_type="list" table="#__pixext_tags" key_field="pixext_tag_id" value_field="tag" default="0"/>
+    <field name="major" default="0" label="COM_PIXEXT_FORM_LBL_VERSION_MAJOR" description="COM_PIXEXT_FORM_DESC_VERSION_MAJOR" hint="COM_PIXEXT_FORM_LBL_VERSION_MAJOR"/>
+    <field name="minor" default="0" label="COM_PIXEXT_FORM_LBL_VERSION_MINOR" description="COM_PIXEXT_FORM_DESC_VERSION_MINOR" hint="COM_PIXEXT_FORM_LBL_VERSION_MINOR"/>
+    <field name="patch" default="0" label="COM_PIXEXT_FORM_LBL_VERSION_PATCH" description="COM_PIXEXT_FORM_DESC_VERSION_PATCH" hint="COM_PIXEXT_FORM_LBL_VERSION_PATCH"/>
+    <field name="joomla_version" type="text" label="COM_PIXEXT_FORM_LBL_VERSION_JOOMLA_VERSION" description="COM_PIXEXT_FORM_DESC_VERSION_JOOMLA_VERSION" hint="COM_PIXEXT_FORM_LBL_VERSION_JOOMLA_VERSION"/>
+    <field name="ordering"/>
+    <field name="state" type="list" label="JSTATUS" description="JFIELD_PUBLISHED_DESC" class="inputbox" size="1" default="0">
+      <option value="1">JPUBLISHED</option>
+      <option value="0">JUNPUBLISHED</option>
+      <option value="2">JARCHIVED</option>
+      <option value="-2">JTRASHED</option>
+    </field>
+    <field name="checked_out" type="hidden" filter="unset"/>
+    <field name="checked_out_time" default="0000-00-00 00:00:00" type="hidden" filter="unset"/>
+    <field name="created_by" type="createdby" default="0" label="COM_PIXEXT_FORM_LBL_VERSION_CREATED_BY" description="COM_PIXEXT_FORM_DESC_VERSION_CREATED_BY" hint="COM_PIXEXT_FORM_LBL_VERSION_CREATED_BY"/>
+    <field name="version_note" type="text" label="JGLOBAL_FIELD_VERSION_NOTE_LABEL" description="JGLOBAL_FIELD_VERSION_NOTE_DESC" class="inputbox" size="45" labelclass="control-label"/>
+  </fieldset>
+</form>

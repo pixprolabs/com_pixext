@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+  <fieldset>
+    <field name="pixext_package_version_id" label="COM_PIXEXT_FORM_LBL_PACKAGEVERSION_PIXEXT_PACKAGE_VERSION_ID" description="COM_PIXEXT_FORM_DESC_PACKAGEVERSION_PIXEXT_PACKAGE_VERSION_ID" hint="COM_PIXEXT_FORM_LBL_PACKAGEVERSION_PIXEXT_PACKAGE_VERSION_ID"/>
+    <field name="pixext_package_id" type="foreignkey" label="COM_PIXEXT_FORM_LBL_PACKAGEVERSION_PIXEXT_PACKAGE_ID" description="COM_PIXEXT_FORM_DESC_PACKAGEVERSION_PIXEXT_PACKAGE_ID" class="inputbox" input_type="list" table="#__pixext_packages" key_field="pixext_package_id" value_field="name" default="0"/>
+    <field name="major" label="COM_PIXEXT_FORM_LBL_PACKAGEVERSION_MAJOR" description="COM_PIXEXT_FORM_DESC_PACKAGEVERSION_MAJOR" hint="COM_PIXEXT_FORM_LBL_PACKAGEVERSION_MAJOR"/>
+    <field name="minor" label="COM_PIXEXT_FORM_LBL_PACKAGEVERSION_MINOR" description="COM_PIXEXT_FORM_DESC_PACKAGEVERSION_MINOR" hint="COM_PIXEXT_FORM_LBL_PACKAGEVERSION_MINOR"/>
+    <field name="patch" label="COM_PIXEXT_FORM_LBL_PACKAGEVERSION_PATCH" description="COM_PIXEXT_FORM_DESC_PACKAGEVERSION_PATCH" hint="COM_PIXEXT_FORM_LBL_PACKAGEVERSION_PATCH"/>
+    <field name="state" type="list" label="JSTATUS" description="JFIELD_PUBLISHED_DESC" class="inputbox" size="1" default="0">
+      <option value="1">JPUBLISHED</option>
+      <option value="0">JUNPUBLISHED</option>
+      <option value="2">JARCHIVED</option>
+      <option value="-2">JTRASHED</option>
+    </field>
+    <field name="checked_out" type="hidden" filter="unset"/>
+    <field name="checked_out_time" default="0000-00-00 00:00:00" type="hidden" filter="unset"/>
+    <field name="created_by" type="createdby" default="0" label="COM_PIXEXT_FORM_LBL_PACKAGEVERSION_CREATED_BY" description="COM_PIXEXT_FORM_DESC_PACKAGEVERSION_CREATED_BY" hint="COM_PIXEXT_FORM_LBL_PACKAGEVERSION_CREATED_BY"/>
+    <field name="version_note" type="text" label="JGLOBAL_FIELD_VERSION_NOTE_LABEL" description="JGLOBAL_FIELD_VERSION_NOTE_DESC" class="inputbox" size="45" labelclass="control-label"/>
+  </fieldset>
+</form>

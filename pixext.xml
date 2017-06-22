@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.0" method="upgrade">
+    <name>com_pixext</name>
+    <creationDate>2017-03-16</creationDate>
+    <copyright>Copyright © You Rock AB 2017 All Rights Reserved</copyright>
+    <license>GNU General Public License version 2 eller senare; se LICENSE.txt</license>
+    <author>Johan Sundell</author>
+    <authorEmail>johan@pixpro.net</authorEmail>
+    <authorUrl>http://pixpro.net</authorUrl>
+    <version>1.0.0</version>
+    <description>TODO</description>
+    
+    <!-- 
+    <scriptfile>script.php</scriptfile>
+     -->
+    
+    <install> <!-- Runs on install -->
+        <sql>
+            <file driver="mysql" charset="utf8">admin/sql/install.mysql.utf8.sql</file>
+        </sql>
+    </install>
+    <update> <!-- Runs on update -->
+        <sql>
+            <file driver="mysql" charset="utf8">admin/sql/update.mysql.utf8.sql</file>
+        </sql>
+    </update>
+    <uninstall> <!-- Runs on uninstall -->
+        <sql>
+            <file driver="mysql" charset="utf8">admin/sql/uninstall.mysql.utf8.sql</file>
+        </sql>
+    </uninstall>
+
+    <files folder="site">
+        <filename>index.html</filename>
+        <filename>pixext.php</filename>
+        <filename>controller.php</filename>
+        <filename>router.php</filename>
+        <folder>views</folder>
+        <folder>models</folder>
+        <folder>controllers</folder>
+        <folder>helpers</folder>
+        <folder>language</folder>
+    </files>
+    <media destination="com_pixext" folder="media">
+        <folder>js</folder>
+        <folder>css</folder>
+    </media>
+    <languages folder="site/languages">
+			<language tag="en-GB">en-GB/en-GB.com_pixext.ini</language>
+    </languages>
+    <administration>
+        <menu img="media/com_pixext/images/s_com_pixext.png" >COM_PIXEXT</menu>
+        <submenu>
+            
+			<menu link="option=com_pixext&amp;view=tags" view="tags" img="media/com_pixext/images/s_tags.png" alt="Pixext/Tags">COM_PIXEXT_TITLE_TAGS</menu>
+
+			<menu link="option=com_pixext&amp;view=types" view="types" img="media/com_pixext/images/s_types.png" alt="Pixext/Types">COM_PIXEXT_TITLE_TYPES</menu>
+
+			<menu link="option=com_pixext&amp;view=extensions" view="extensions" img="media/com_pixext/images/s_extensions.png" alt="Pixext/Extensions">COM_PIXEXT_TITLE_EXTENSIONS</menu>
+
+			<menu link="option=com_pixext&amp;view=versions" view="versions" img="media/com_pixext/images/s_versions.png" alt="Pixext/Versions">COM_PIXEXT_TITLE_VERSIONS</menu>
+
+			<menu link="option=com_pixext&amp;view=logtypes" view="logtypes" img="media/com_pixext/images/s_logtypes.png" alt="Pixext/Logtypes">COM_PIXEXT_TITLE_LOGTYPES</menu>
+
+			<menu link="option=com_pixext&amp;view=ips" view="ips" img="media/com_pixext/images/s_ips.png" alt="Pixext/Ips">COM_PIXEXT_TITLE_IPS</menu>
+
+			<menu link="option=com_pixext&amp;view=logs" view="logs" img="media/com_pixext/images/s_logs.png" alt="Pixext/Logs">COM_PIXEXT_TITLE_LOGS</menu>
+
+			<menu link="option=com_pixext&amp;view=licenses" view="licenses" img="media/com_pixext/images/s_licenses.png" alt="Pixext/Licenses">COM_PIXEXT_TITLE_LICENSES</menu>
+
+			<menu link="option=com_pixext&amp;view=packages" view="packages" img="media/com_pixext/images/s_packages.png" alt="Pixext/Packages">COM_PIXEXT_TITLE_PACKAGES</menu>
+
+			<menu link="option=com_pixext&amp;view=packageversions" view="packageversions" img="media/com_pixext/images/s_packageversions.png" alt="Pixext/Packageversions">COM_PIXEXT_TITLE_PACKAGEVERSIONS</menu>
+
+			<menu link="option=com_pixext&amp;view=packagelicenses" view="packagelicenses" img="media/com_pixext/images/s_packagelicenses.png" alt="Pixext/Packagelicenses">COM_PIXEXT_TITLE_PACKAGELICENSES</menu>
+
+			<menu link="option=com_pixext&amp;view=packageextensionversions" view="packageextensionversions" img="media/com_pixext/images/s_packageextensionversions.png" alt="Pixext/Packageextensionversions">COM_PIXEXT_TITLE_PACKAGEEXTENSIONVERSIONS</menu>
+
+			<menu link="option=com_pixext&amp;view=cpanels" view="cpanels" img="media/com_pixext/images/s_cpanels.png" alt="Pixext/Cpanels">COM_PIXEXT_TITLE_CPANELS</menu>
+
+        </submenu>
+        <files folder="admin">
+            <filename>access.xml</filename>
+            <filename>config.xml</filename>
+            <filename>controller.php</filename>
+            <filename>index.html</filename>
+            <filename>pixext.php</filename>
+            <folder>controllers</folder>
+            <folder>assets</folder>
+            <folder>helpers</folder>
+            <folder>models</folder>
+            <folder>sql</folder>
+            <folder>tables</folder>
+            <folder>views</folder>
+            <folder>language</folder>
+        </files>
+        <languages folder="language">
+			<language tag="en-GB">en-GB/en-GB.com_pixext.ini</language>
+			<language tag="en-GB">en-GB/en-GB.com_pixext.sys.ini</language>
+        </languages>
+    </administration>
+    <config>
+        <fields name="params">
+            <fieldset name="component">
+                <field name="save_history" default="0" />
+            </fieldset>
+        </fields>
+    </config>
+    <plugins>
+        <plugin group="search" plugin="pixext"/>
+    </plugins>
+    
+</extension>
+<!-- Component built by the Joomla Component Creator -->
+<!-- http://www.component-creator.com/ -->

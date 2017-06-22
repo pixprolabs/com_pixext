@@ -1,0 +1,161 @@
+.icon-48-tags {
+      background-image: url(../images/l_tags.png);
+      padding-left:60px!important;
+}
+
+.icon-48-tag {
+      background-image: url(../images/l_tags.png);
+      padding-left:60px!important;
+}
+
+.color-box-tags { 
+      float: left;      width: 15px;      height: 15px;      margin-right: 5px;      border: 1px solid rgba(0, 0, 0, .2);}
+
+.icon-48-types {
+      background-image: url(../images/l_types.png);
+      padding-left:60px!important;
+}
+
+.icon-48-type {
+      background-image: url(../images/l_types.png);
+      padding-left:60px!important;
+}
+
+.color-box-types { 
+      float: left;      width: 15px;      height: 15px;      margin-right: 5px;      border: 1px solid rgba(0, 0, 0, .2);}
+
+.icon-48-extensions {
+      background-image: url(../images/l_extensions.png);
+      padding-left:60px!important;
+}
+
+.icon-48-extension {
+      background-image: url(../images/l_extensions.png);
+      padding-left:60px!important;
+}
+
+.color-box-extensions { 
+      float: left;      width: 15px;      height: 15px;      margin-right: 5px;      border: 1px solid rgba(0, 0, 0, .2);}
+
+.icon-48-versions {
+      background-image: url(../images/l_versions.png);
+      padding-left:60px!important;
+}
+
+.icon-48-version {
+      background-image: url(../images/l_versions.png);
+      padding-left:60px!important;
+}
+
+.color-box-versions { 
+      float: left;      width: 15px;      height: 15px;      margin-right: 5px;      border: 1px solid rgba(0, 0, 0, .2);}
+
+.icon-48-logtypes {
+      background-image: url(../images/l_logtypes.png);
+      padding-left:60px!important;
+}
+
+.icon-48-logtype {
+      background-image: url(../images/l_logtypes.png);
+      padding-left:60px!important;
+}
+
+.color-box-logtypes { 
+      float: left;      width: 15px;      height: 15px;      margin-right: 5px;      border: 1px solid rgba(0, 0, 0, .2);}
+
+.icon-48-ips {
+      background-image: url(../images/l_ips.png);
+      padding-left:60px!important;
+}
+
+.icon-48-ip {
+      background-image: url(../images/l_ips.png);
+      padding-left:60px!important;
+}
+
+.color-box-ips { 
+      float: left;      width: 15px;      height: 15px;      margin-right: 5px;      border: 1px solid rgba(0, 0, 0, .2);}
+
+.icon-48-logs {
+      background-image: url(../images/l_logs.png);
+      padding-left:60px!important;
+}
+
+.icon-48-log {
+      background-image: url(../images/l_logs.png);
+      padding-left:60px!important;
+}
+
+.color-box-logs { 
+      float: left;      width: 15px;      height: 15px;      margin-right: 5px;      border: 1px solid rgba(0, 0, 0, .2);}
+
+.icon-48-licenses {
+      background-image: url(../images/l_licenses.png);
+      padding-left:60px!important;
+}
+
+.icon-48-license {
+      background-image: url(../images/l_licenses.png);
+      padding-left:60px!important;
+}
+
+.color-box-licenses { 
+      float: left;      width: 15px;      height: 15px;      margin-right: 5px;      border: 1px solid rgba(0, 0, 0, .2);}
+
+.icon-48-packages {
+      background-image: url(../images/l_packages.png);
+      padding-left:60px!important;
+}
+
+.icon-48-package {
+      background-image: url(../images/l_packages.png);
+      padding-left:60px!important;
+}
+
+.color-box-packages { 
+      float: left;      width: 15px;      height: 15px;      margin-right: 5px;      border: 1px solid rgba(0, 0, 0, .2);}
+
+.icon-48-packageversions {
+      background-image: url(../images/l_packageversions.png);
+      padding-left:60px!important;
+}
+
+.icon-48-packageversion {
+      background-image: url(../images/l_packageversions.png);
+      padding-left:60px!important;
+}
+
+.color-box-packageversions { 
+      float: left;      width: 15px;      height: 15px;      margin-right: 5px;      border: 1px solid rgba(0, 0, 0, .2);}
+
+.icon-48-packagelicenses {
+      background-image: url(../images/l_packagelicenses.png);
+      padding-left:60px!important;
+}
+
+.icon-48-packagelicense {
+      background-image: url(../images/l_packagelicenses.png);
+      padding-left:60px!important;
+}
+
+.color-box-packagelicenses { 
+      float: left;      width: 15px;      height: 15px;      margin-right: 5px;      border: 1px solid rgba(0, 0, 0, .2);}
+
+.icon-48-packageextensionversions {
+      background-image: url(../images/l_packageextensionversions.png);
+      padding-left:60px!important;
+}
+
+.icon-48-packageextensionversion {
+      background-image: url(../images/l_packageextensionversions.png);
+      padding-left:60px!important;
+}
+
+.color-box-packageextensionversions { 
+      float: left;      width: 15px;      height: 15px;      margin-right: 5px;      border: 1px solid rgba(0, 0, 0, .2);}
+
+
+
+.other-filters{
+    padding: 0 14px;
+}

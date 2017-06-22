@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+  <fieldset>
+    <field name="pixext_log_id" label="COM_PIXEXT_FORM_LBL_LOG_PIXEXT_LOG_ID" description="COM_PIXEXT_FORM_DESC_LOG_PIXEXT_LOG_ID" hint="COM_PIXEXT_FORM_LBL_LOG_PIXEXT_LOG_ID"/>
+    <field name="pixext_log_type_id" type="foreignkey" label="COM_PIXEXT_FORM_LBL_LOG_PIXEXT_LOG_TYPE_ID" description="COM_PIXEXT_FORM_DESC_LOG_PIXEXT_LOG_TYPE_ID" class="inputbox" input_type="list" table="#__pixext_log_types" key_field="pixext_log_type_id" value_field="type" default="0"/>
+    <field name="pixext_log_from_id" type="foreignkey" label="COM_PIXEXT_FORM_LBL_LOG_PIXEXT_LOG_FROM_ID" description="COM_PIXEXT_FORM_DESC_LOG_PIXEXT_LOG_FROM_ID" class="inputbox" input_type="list" table="#__pixext_log_ips" key_field="pixext_log_ip_id" value_field="ip" default="0"/>
+    <field name="pixext_license_id" type="foreignkey" label="COM_PIXEXT_FORM_LBL_LOG_PIXEXT_LICENSE_ID" description="COM_PIXEXT_FORM_DESC_LOG_PIXEXT_LICENSE_ID" class="inputbox" input_type="list" table="#__pixext_licenses" key_field="pixext_license_id" value_field="licence_key" default="0"/>
+    <field name="when" default="CURRENT_TIMESTAMP" label="COM_PIXEXT_FORM_LBL_LOG_WHEN" description="COM_PIXEXT_FORM_DESC_LOG_WHEN" hint="COM_PIXEXT_FORM_LBL_LOG_WHEN"/>
+    <field name="version_note" type="text" label="JGLOBAL_FIELD_VERSION_NOTE_LABEL" description="JGLOBAL_FIELD_VERSION_NOTE_DESC" class="inputbox" size="45" labelclass="control-label"/>
+  </fieldset>
+</form>

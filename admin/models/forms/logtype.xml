@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+  <fieldset>
+    <field name="pixext_log_type_id" label="COM_PIXEXT_FORM_LBL_LOGTYPE_PIXEXT_LOG_TYPE_ID" description="COM_PIXEXT_FORM_DESC_LOGTYPE_PIXEXT_LOG_TYPE_ID" hint="COM_PIXEXT_FORM_LBL_LOGTYPE_PIXEXT_LOG_TYPE_ID"/>
+    <field name="type" type="text" label="COM_PIXEXT_FORM_LBL_LOGTYPE_TYPE" description="COM_PIXEXT_FORM_DESC_LOGTYPE_TYPE" hint="COM_PIXEXT_FORM_LBL_LOGTYPE_TYPE"/>
+    <field name="version_note" type="text" label="JGLOBAL_FIELD_VERSION_NOTE_LABEL" description="JGLOBAL_FIELD_VERSION_NOTE_DESC" class="inputbox" size="45" labelclass="control-label"/>
+  </fieldset>
+</form>

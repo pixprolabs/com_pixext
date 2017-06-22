@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+  <fieldset>
+    <field name="pixext_tag_id" label="COM_PIXEXT_FORM_LBL_TAG_PIXEXT_TAG_ID" description="COM_PIXEXT_FORM_DESC_TAG_PIXEXT_TAG_ID" hint="COM_PIXEXT_FORM_LBL_TAG_PIXEXT_TAG_ID"/>
+    <field name="tag" type="text" label="COM_PIXEXT_FORM_LBL_TAG_TAG" description="COM_PIXEXT_FORM_DESC_TAG_TAG" hint="COM_PIXEXT_FORM_LBL_TAG_TAG"/>
+    <field name="version_note" type="text" label="JGLOBAL_FIELD_VERSION_NOTE_LABEL" description="JGLOBAL_FIELD_VERSION_NOTE_DESC" class="inputbox" size="45" labelclass="control-label"/>
+  </fieldset>
+</form>
