@@ -68,6 +68,14 @@ class PixextControllerCpanels extends JControllerAdmin
 		
 		$this->setRedirect('index.php?option=com_pixext&view=cpanels');
 	}
+	
+	public function getInstallations()
+	{
+		$pixext_extension_id = (int)JFactory::getApplication()->input->getInt( 'pixext_extension_id' );
+		$data = PixextHelpersPixext::getComponentInstallations( $pixext_extension_id, 0, 0 );
+		echo json_encode( $data ); die();
+		return;
+	}
 	/**
 	 * Method to clone existing Cpanels
 	 *

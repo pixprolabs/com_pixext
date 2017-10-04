@@ -1,0 +1,68 @@
+<link rel="import"  href="bower_components/polymer/polymer-element.html">
+<link rel="import"  href="bower_components/paper-card/paper-card.html">
+
+<dom-module id="pixext-extension">
+	<template>
+		<style>
+			:host {
+				display: inline-block;
+			}
+			paper-card{
+				width: 300px;
+			}
+		</style>
+		<paper-card heading="[[name]]">
+			<div class="card-content">
+				<div>
+					<a href="[[url]]" class="modal">View Lisenses</a><br/>
+					<a href="#myModal" class="btn" data-toggle="modal"> Click here to see my image with a caption.</a>
+				</div>
+				<div>
+					Licenses: [[licenses]]
+				</div>
+				<div>
+					Versions: [[versions]]
+				</div>
+			</div>
+		</paper-card>
+	</template>
+
+	<script>
+		class PixextExtension extends Polymer.Element
+		{
+			static get is() { return "pixext-extension"; }
+			
+			static get properties() {
+				return {
+					name: 
+					{
+						type: String,
+						value: "Name",
+					},
+					licenses:
+					{
+						type: String,
+						value: "1",
+					},
+					versions:
+					{
+						type: String,
+						value: "2",
+					},
+					url:
+					{
+						type: "String",
+						value: "",
+					},
+				};
+			}
+			
+			constructor() 
+			{
+				super();
+			}
+		}
+		// Register the new element with the browser
+		customElements.define(PixextExtension.is, PixextExtension);
+	</script>
+</dom-module>

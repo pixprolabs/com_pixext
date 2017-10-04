@@ -1,0 +1,72 @@
+<link rel="import"  href="bower_components/polymer/polymer-element.html">
+<link rel="import"  href="bower_components/paper-card/paper-card.html">
+
+<dom-module id="pixext-license">
+	<template>
+		<style>
+			:host {
+				display: inline-block;
+			}
+			paper-card{
+				width: 300px;
+			}
+		</style>
+		<paper-card heading="[[name]]">
+			<div class="card-content">
+				<div>
+					Email: [[email]]
+				</div>
+				<div>
+					Installations: [[installations]]
+				</div>
+				<div>
+					Update request: [[update]]
+				</div>
+			</div>
+		</paper-card>
+	</template>
+
+	<script>
+		class PixextLicense extends Polymer.Element
+		{
+			static get is() { return "pixext-license"; }
+			
+			static get properties() {
+				return {
+					name: 
+					{
+						type: String,
+						value: "",
+					},
+					installations:
+					{
+						type: String,
+						value: "",
+					},
+					todo:
+					{
+						type: String,
+						value: "test",
+					},
+					update:
+					{
+						type: String,
+						value: "46",
+					},
+					email:
+					{
+						value: String,
+						value: "",
+					},
+				};
+			}
+			
+			constructor() 
+			{
+				super();
+			}
+		}
+		// Register the new element with the browser
+		customElements.define(PixextLicense.is, PixextLicense);
+	</script>
+</dom-module>

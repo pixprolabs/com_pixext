@@ -1,0 +1,25 @@
+
+<link rel="import"  href="bower_components/polymer/polymer-element.html">
+
+<dom-module id="my-test">
+	<template>
+		<style>
+			:host {
+				display: inline-block;
+			}
+		</style>
+		<h1>testart</h1>
+	</template>
+
+	<script>
+		class MyTest extends Polymer.Element {
+			static get is() { return "my-test"; }
+			/*constructor() {
+			super();
+			this.textContent = "I'm a custom-element.";
+			}*/
+		}
+		// Register the new element with the browser
+		customElements.define(MyTest.is, MyTest);
+	</script>
+</dom-module>

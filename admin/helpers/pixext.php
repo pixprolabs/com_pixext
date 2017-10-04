@@ -157,6 +157,37 @@ JHtmlSidebar::addEntry(
 
 		return $result;
 	}
+	
+	public static function getComponentInstallations( $componentId, $offset, $limit )
+	{
+		$db = JFactory::getDbo();
+		$query = 'SELECT
+				    COUNT(*) AS installations, SUM(AA.update_request) AS questions, AA.name, AA.user, AA.email
+				FROM
+				    (SELECT
+				        COUNT(*) AS update_request,
+				            pe.name,
+				            u.name AS user,
+				            u.email,
+				            u.id
+				    FROM
+				        #__pixext_logs pl
+				    JOIN #__pixext_licenses pli ON pl.pixext_license_id = pli.pixext_license_id
+				    JOIN #__pixext_extensions pe ON pli.pixext_extension_id = pe.pixext_extension_id
+				    JOIN #__users u ON u.id = pli.user_id
+				    WHERE
+				        pl.pixext_log_type_id = 3
+				            AND pe.pixext_extension_id = '.(int)$componentId.'
+				    GROUP BY CONCAT(pl.pixext_log_from_id, "-", pl.pixext_license_id)
+				    ORDER BY pl.pixext_license_id) AA
+				GROUP BY id
+				ORDER BY installations DESC';
+		$result = $db->setQuery($query, $offset, $limit )->loadObjectList();
+		
+		if( !is_array( $result ) )
+			$result = array();
+		return $result;
+	}
 }
 
 

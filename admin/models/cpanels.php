@@ -181,4 +181,16 @@ class PixextModelCpanels extends JModelList
 			return false;
 		}
 	}
+	
+	public function getExtensions()
+	{
+		$db = JFactory::getDbo();
+		$query = $db->getQuery( true );
+		$query->select( 'pe.*, COUNT(pv.pixext_extension_id) as installations' )
+			->from( '#__pixext_extensions pe' )
+			->innerJoin( '#__pixext_licenses pv ON pe.pixext_extension_id = pv.pixext_extension_id' )
+			->group( 'pe.pixext_extension_id' );
+		return $db->setQuery( $query )->loadObjectList();
+		
+	}
 }

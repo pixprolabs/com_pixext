@@ -37,6 +37,7 @@ class PixextViewCpanels extends JViewLegacy
 	public function display($tpl = null)
 	{
 		$this->state = $this->get('State');
+		$this->extensions = $this->get( 'Extensions' );
 
 		// Check for errors.
 		if (count($errors = $this->get('Errors')))
@@ -47,6 +48,15 @@ class PixextViewCpanels extends JViewLegacy
 		PixextHelpersPixext::addSubmenu('cpanels');
 
 		$this->addToolbar();
+		//$data = PixextHelpersPixext::getComponentInstallations( 13, 0, 0 );
+		//print_r( $data ); die();
+		//$doc = JFactory::getDocument();
+		//$doc->addScript( JUri::root().'media/com_pixext/bower_components/webcomponentsjs/webcomponents-loader.js' );
+		//$doc->addHeadLink( JUri::root().'media/com_pixext/bower_components/polymer/polymer.html', 'import' );
+		//$doc->addCustomTag( '<link href="http://localhost/extensionmanager/media/com_pixext/bower_components/polymer/polymer.html" rel="import">' );
+		//$doc->addCustomTag( '<link href="http://localhost/extensionmanager/media/com_pixext/my-test.html" rel="import">' );
+		//$doc->addHeadLink( JUri::root().'media/com_pixext/my-test.html', 'import' );
+		//$doc->addHeadLink( JUri::root().'media/com_pixext/pixext-extension.html', 'import' );
 
 		$this->sidebar = JHtmlSidebar::render();
 		parent::display($tpl);

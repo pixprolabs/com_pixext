@@ -45,6 +45,11 @@ class PixextViewExtension extends JViewLegacy
 		{
 			throw new Exception(implode("\n", $errors));
 		}
+		
+		if( $this->getLayout() == 'modal' )
+		{
+			$this->pixext_extension_id = (int)JFactory::getApplication()->input->getInt( 'pixext_extension_id' );
+		}
 
 		$this->addToolbar();
 		parent::display($tpl);

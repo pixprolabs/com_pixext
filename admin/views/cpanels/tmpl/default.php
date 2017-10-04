@@ -41,8 +41,13 @@ if (!empty($this->extra_sidebar))
 {
 	$this->sidebar .= $this->extra_sidebar;
 }
+$document->addScript( JUri::root().'media/com_pixext/bower_components/webcomponentsjs/webcomponents-loader.js' );
+$document->addHeadLink( JUri::root().'media/com_pixext/pixext-licenses.html', 'import' );
+$document->addHeadLink( JUri::root().'media/com_pixext/pixext-extension.html', 'import' );
+JHTML::_('behavior.modal');
 
 ?>
+
 
 <form action="<?php echo JRoute::_('index.php?option=com_pixext&view=cpanels'); ?>" method="post" name="adminForm" id="adminForm" enctype="multipart/form-data">
 	<?php if (!empty($this->sidebar)): ?>
@@ -59,5 +64,25 @@ if (!empty($this->extra_sidebar))
 			</button>
 			<input type="hidden" name="task" value=""/>
 			<?php echo JHtml::_('form.token'); ?>
+			<div>
+				<?php foreach( $this->extensions as $row ): ?>
+				<a href="<?php echo JRoute::_( 'index.php?option=com_pixext&view=extension&layout=modal&pixext_extension_id='.(int)$row->pixext_extension_id.'&tmpl=component' ); ?>" class="modal"><?php echo $row->name; ?></a><br/>
+				<?php endforeach; ?>
+			</div>
+			<div>
+				<!--
+				<pixext-extension
+					name="com_pixext"
+					url="<?php echo JRoute::_( 'index.php?option=com_pixext&view=extension&layout=modal&tmpl=component' ); ?>"
+				>
+				</pixext-extension>
+				 -->
+			</div>
+			<div>
+				<!--
+				<pixext-licenses base="<?php echo JRoute::_( 'index.php?option=com_pixext&task=cpanels.getinstallations' )?>"></pixext-licenses>
+				 -->
+			</div>
 		</div>
 </form>
+    

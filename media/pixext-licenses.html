@@ -1,0 +1,75 @@
+<link rel="import"  href="bower_components/polymer/polymer-element.html">
+<link rel="import"  href="bower_components/iron-ajax/iron-ajax.html">
+<link rel="import"  href="bower_components/iron-list/iron-list.html">
+<link rel="import"  href="pixext-license.html">
+
+<dom-module id="pixext-licenses">
+	<template>
+		<style>
+			:host {
+				/*display: inline-block;*/
+				@apply(--layout-vertical);
+				width: 350px;
+				height: 400px;
+				display: flex;
+      			flex-direction: column;
+			}
+			iron-list {
+      			flex: 1 1 auto;
+    		}
+		</style>
+		<iron-ajax auto
+			url="[[base]]"
+			handle-as="json"
+			last-response="{{ajaxResponse}}"
+			params="[[createParams(sudde)]]"
+		>
+		</iron-ajax>
+		<div>
+			<iron-list items="[[ajaxResponse]]" as="item">
+				<template>
+					<pixext-license
+						name="[[item.user]]"
+						email="[[item.email]]"
+						installations="[[item.installations]]"
+						update="[[item.questions]]"
+					></pixext-license>
+				</template>
+			</iron-list>
+		</div>
+	</template>
+	<script>
+		class PixextLicenses extends Polymer.Element
+		{
+			static get is() { return "pixext-licenses"; }
+			
+			static get properties() {
+				return {
+					base:
+					{
+						type: String,
+						value: "",
+					},
+					sudde:
+					{
+						type: String,
+						value: "johan",
+					},
+				};
+			}
+			
+			createParams(sudde)
+			{
+				console.debug(sudde);
+				return {test:sudde};
+			}
+			
+			constructor() 
+			{
+				super();
+			}
+		}
+		// Register the new element with the browser
+		customElements.define(PixextLicenses.is, PixextLicenses);
+	</script>
+</dom-module>
