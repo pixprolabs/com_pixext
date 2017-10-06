@@ -9,7 +9,7 @@
 		<field
 			name="pixext_extension_version_id"
 			type="sql"
-			query="SELECT CONCAT( pe.name, ' ', pv.major, '.', pv.minor, '.', pv.patch ) AS name, pv.pixext_version_id FROM jos_pixext_versions pv JOIN jos_pixext_extensions pe ON pv.pixext_extension_id = pe.pixext_extension_id ORDER BY pe.name, pv.major, pv.minor, pv.patch"
+			query="SELECT CONCAT( pe.name, ' ', pv.major, '.', pv.minor, '.', pv.patch ) AS name, pv.pixext_version_id FROM #__pixext_versions pv JOIN #__pixext_extensions pe ON pv.pixext_extension_id = pe.pixext_extension_id ORDER BY pe.name, pv.major, pv.minor, pv.patch"
 			key_field="pixext_version_id"
 			value_field="name"
 			label="COM_PIXEXT_FORM_LBL_PACKAGEEXTENSIONVERSION_PIXEXT_EXTENSION_VERSION_ID"
@@ -26,7 +26,7 @@
 		<field
 			name="pixext_package_version_id"
 			type="sql"
-			query="SELECT CONCAT( pp.packagename, ' ', ppv.major, '.', ppv.minor, '.', ppv.patch ) AS name, ppv.pixext_package_version_id FROM jos_pixext_package_versions ppv JOIN jos_pixext_packages pp ON ppv.pixext_package_id = pp.pixext_package_id ORDER BY pp.packagename, ppv.major, ppv.minor, ppv.patch"
+			query="SELECT CONCAT( pp.packagename, ' ', ppv.major, '.', ppv.minor, '.', ppv.patch ) AS name, ppv.pixext_package_version_id FROM #__pixext_package_versions ppv JOIN #__pixext_packages pp ON ppv.pixext_package_id = pp.pixext_package_id ORDER BY pp.packagename, ppv.major, ppv.minor, ppv.patch"
 			key_field="pixext_package_version_id"
 			value_field="name"
 			label="COM_PIXEXT_FORM_LBL_PACKAGEEXTENSIONVERSION_PIXEXT_PACKAGE_VERSION_ID"
