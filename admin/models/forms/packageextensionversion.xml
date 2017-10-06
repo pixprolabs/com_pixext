@@ -1,18 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <form>
-  <fieldset>
-    <field name="pixext_package_extension_version_id" label="COM_PIXEXT_FORM_LBL_PACKAGEEXTENSIONVERSION_PIXEXT_PACKAGE_EXTENSION_VERSION_ID" description="COM_PIXEXT_FORM_DESC_PACKAGEEXTENSIONVERSION_PIXEXT_PACKAGE_EXTENSION_VERSION_ID" hint="COM_PIXEXT_FORM_LBL_PACKAGEEXTENSIONVERSION_PIXEXT_PACKAGE_EXTENSION_VERSION_ID"/>
-    <field name="pixext_extension_version_id" type="foreignkey" label="COM_PIXEXT_FORM_LBL_PACKAGEEXTENSIONVERSION_PIXEXT_EXTENSION_VERSION_ID" description="COM_PIXEXT_FORM_DESC_PACKAGEEXTENSIONVERSION_PIXEXT_EXTENSION_VERSION_ID" class="inputbox" input_type="list" table="#__pixext_versions" key_field="pixext_version_id" value_field="pixext_version_id" default="0"/>
-    <field name="pixext_package_version_id" type="foreignkey" label="COM_PIXEXT_FORM_LBL_PACKAGEEXTENSIONVERSION_PIXEXT_PACKAGE_VERSION_ID" description="COM_PIXEXT_FORM_DESC_PACKAGEEXTENSIONVERSION_PIXEXT_PACKAGE_VERSION_ID" class="inputbox" input_type="list" table="#__pixext_package_versions" key_field="pixext_package_version_id" value_field="pixext_package_version_id" default="0"/>
-    <field name="state" type="list" label="JSTATUS" description="JFIELD_PUBLISHED_DESC" class="inputbox" size="1" default="0">
-      <option value="1">JPUBLISHED</option>
-      <option value="0">JUNPUBLISHED</option>
-      <option value="2">JARCHIVED</option>
-      <option value="-2">JTRASHED</option>
-    </field>
-    <field name="checked_out" type="hidden" filter="unset"/>
-    <field name="checked_out_time" default="0000-00-00 00:00:00" type="hidden" filter="unset"/>
-    <field name="created_by" type="createdby" default="0" label="COM_PIXEXT_FORM_LBL_PACKAGEEXTENSIONVERSION_CREATED_BY" description="COM_PIXEXT_FORM_DESC_PACKAGEEXTENSIONVERSION_CREATED_BY" hint="COM_PIXEXT_FORM_LBL_PACKAGEEXTENSIONVERSION_CREATED_BY"/>
-    <field name="version_note" type="text" label="JGLOBAL_FIELD_VERSION_NOTE_LABEL" description="JGLOBAL_FIELD_VERSION_NOTE_DESC" class="inputbox" size="45" labelclass="control-label"/>
-  </fieldset>
+	<fieldset>
+		<field name="pixext_package_extension_version_id" label="COM_PIXEXT_FORM_LBL_PACKAGEEXTENSIONVERSION_PIXEXT_PACKAGE_EXTENSION_VERSION_ID" description="COM_PIXEXT_FORM_DESC_PACKAGEEXTENSIONVERSION_PIXEXT_PACKAGE_EXTENSION_VERSION_ID" hint="COM_PIXEXT_FORM_LBL_PACKAGEEXTENSIONVERSION_PIXEXT_PACKAGE_EXTENSION_VERSION_ID"/>
+
+		<!-- 
+		<field name="pixext_extension_version_id" type="foreignkey" label="COM_PIXEXT_FORM_LBL_PACKAGEEXTENSIONVERSION_PIXEXT_EXTENSION_VERSION_ID" description="COM_PIXEXT_FORM_DESC_PACKAGEEXTENSIONVERSION_PIXEXT_EXTENSION_VERSION_ID" class="inputbox" input_type="list" table="#__pixext_versions" key_field="pixext_version_id" value_field="pixext_version_id" default="0"/>
+		-->
+		<field
+			name="pixext_extension_version_id"
+			type="sql"
+			query="SELECT CONCAT( pe.name, ' ', pv.major, '.', pv.minor, '.', pv.patch ) AS name, pv.pixext_version_id FROM jos_pixext_versions pv JOIN jos_pixext_extensions pe ON pv.pixext_extension_id = pe.pixext_extension_id ORDER BY pe.name, pv.major, pv.minor, pv.patch"
+			key_field="pixext_version_id"
+			value_field="name"
+			label="COM_PIXEXT_FORM_LBL_PACKAGEEXTENSIONVERSION_PIXEXT_EXTENSION_VERSION_ID"
+			description="COM_PIXEXT_FORM_DESC_PACKAGEEXTENSIONVERSION_PIXEXT_EXTENSION_VERSION_ID"
+			class="inputbox"
+		>
+			<option value="0">Select</option>
+		</field>
+		
+		<!--   -->
+		<!-- 
+		<field name="pixext_package_version_id" type="foreignkey" label="COM_PIXEXT_FORM_LBL_PACKAGEEXTENSIONVERSION_PIXEXT_PACKAGE_VERSION_ID" description="COM_PIXEXT_FORM_DESC_PACKAGEEXTENSIONVERSION_PIXEXT_PACKAGE_VERSION_ID" class="inputbox" input_type="list" table="#__pixext_package_versions" key_field="pixext_package_version_id" value_field="pixext_package_version_id" default="0"/>
+		-->
+		<field
+			name="pixext_package_version_id"
+			type="sql"
+			query="SELECT CONCAT( pp.packagename, ' ', ppv.major, '.', ppv.minor, '.', ppv.patch ) AS name, ppv.pixext_package_version_id FROM jos_pixext_package_versions ppv JOIN jos_pixext_packages pp ON ppv.pixext_package_id = pp.pixext_package_id ORDER BY pp.packagename, ppv.major, ppv.minor, ppv.patch"
+			key_field="pixext_package_version_id"
+			value_field="name"
+			label="COM_PIXEXT_FORM_LBL_PACKAGEEXTENSIONVERSION_PIXEXT_PACKAGE_VERSION_ID"
+			description="COM_PIXEXT_FORM_DESC_PACKAGEEXTENSIONVERSION_PIXEXT_PACKAGE_VERSION_ID"
+			class="inputbox"
+		>
+			<option value="0">Select</option>
+		</field>
+		 
+		<field name="state" type="list" label="JSTATUS" description="JFIELD_PUBLISHED_DESC" class="inputbox" size="1" default="0">
+			<option value="1">JPUBLISHED</option>
+			<option value="0">JUNPUBLISHED</option>
+			<option value="2">JARCHIVED</option>
+			<option value="-2">JTRASHED</option>
+		</field>
+		<field name="checked_out" type="hidden" filter="unset"/>
+		<field name="checked_out_time" default="0000-00-00 00:00:00" type="hidden" filter="unset"/>
+		<field name="created_by" type="createdby" default="0" label="COM_PIXEXT_FORM_LBL_PACKAGEEXTENSIONVERSION_CREATED_BY" description="COM_PIXEXT_FORM_DESC_PACKAGEEXTENSIONVERSION_CREATED_BY" hint="COM_PIXEXT_FORM_LBL_PACKAGEEXTENSIONVERSION_CREATED_BY"/>
+		<field name="version_note" type="text" label="JGLOBAL_FIELD_VERSION_NOTE_LABEL" description="JGLOBAL_FIELD_VERSION_NOTE_DESC" class="inputbox" size="45" labelclass="control-label"/>
+	</fieldset>
 </form>
