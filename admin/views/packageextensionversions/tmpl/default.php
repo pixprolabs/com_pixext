@@ -247,10 +247,10 @@ if (!empty($this->extra_sidebar))
 					<?php echo $item->pixext_package_extension_version_id; ?>
 				</td>				<td>
 
-					<?php echo $item->pixext_extension_version_id; ?>
+					<?php echo $item->versions_fk_value_2663498; //echo $item->pixext_extension_version_id; ?>
 				</td>				<td>
 
-					<?php echo $item->pixext_package_version_id; ?>
+					<?php echo $item->packageversions_fk_value_2663499; //echo $item->pixext_package_version_id; ?>
 				</td>				<td>
 
 					<?php echo $item->created_by; ?>

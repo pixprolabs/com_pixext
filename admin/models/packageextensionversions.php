@@ -121,11 +121,15 @@ class PixextModelPackageextensionversions extends JModelList
 		$query->select("uc.name AS uEditor");
 		$query->join("LEFT", "#__users AS uc ON uc.id=a.checked_out");
 		// Join over the foreign key 'pixext_extension_version_id'
-		$query->select('`#__pixext_versions_2663498`.`pixext_version_id` AS versions_fk_value_2663498');
-		$query->join('LEFT', '#__pixext_versions AS #__pixext_versions_2663498 ON #__pixext_versions_2663498.`pixext_version_id` = a.`pixext_extension_version_id`');
+		//$query->select('`#__pixext_versions_2663498`.`pixext_version_id` AS versions_fk_value_2663498');
+		$query->select("CONCAT( pe.name, ' ', #__pixext_versions_2663498.major, '.', #__pixext_versions_2663498.minor, '.', #__pixext_versions_2663498.patch ) AS versions_fk_value_2663498");
+		$query->join('LEFT', '#__pixext_versions AS #__pixext_versions_2663498 ON #__pixext_versions_2663498.`pixext_version_id` = a.`pixext_extension_version_id`')
+			->join('LEFT', '#__pixext_extensions pe ON #__pixext_versions_2663498.`pixext_extension_id` = pe.pixext_extension_id');
 		// Join over the foreign key 'pixext_package_version_id'
-		$query->select('`#__pixext_package_versions_2663499`.`pixext_package_version_id` AS packageversions_fk_value_2663499');
-		$query->join('LEFT', '#__pixext_package_versions AS #__pixext_package_versions_2663499 ON #__pixext_package_versions_2663499.`pixext_package_version_id` = a.`pixext_package_version_id`');
+		//$query->select('`#__pixext_package_versions_2663499`.`pixext_package_version_id` AS packageversions_fk_value_2663499');
+		$query->select("CONCAT( pp.packagename, ' ', #__pixext_package_versions_2663499.major, '.', #__pixext_package_versions_2663499.minor, '.', #__pixext_package_versions_2663499.patch ) AS packageversions_fk_value_2663499");
+		$query->join('LEFT', '#__pixext_package_versions AS #__pixext_package_versions_2663499 ON #__pixext_package_versions_2663499.`pixext_package_version_id` = a.`pixext_package_version_id`')
+			->join('LEFT', '#__pixext_packages pp ON #__pixext_package_versions_2663499.`pixext_package_id` = pp.pixext_package_id');
 
 		// Join over the user field 'created_by'
 		$query->select('`created_by`.name AS `created_by`');
