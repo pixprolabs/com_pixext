@@ -19,6 +19,8 @@ if (!JFactory::getUser()->authorise('core.manage', 'com_pixext'))
 // Include dependancies
 jimport('joomla.application.component.controller');
 
+JHtml::_('behavior.keepalive');
+
 JLoader::registerPrefix('Pixext', JPATH_COMPONENT_ADMINISTRATOR);
 
 $controller = JControllerLegacy::getInstance('Pixext');
